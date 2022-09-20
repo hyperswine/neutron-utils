@@ -1,4 +1,3 @@
-// maybe soemthing like clap integrated?
 use cli::prelude::*
 use regex::prelude::*
 
@@ -40,6 +39,6 @@ fn main(args: Args) -> Status {
 
     let working_string = read_to_string(file).expect("Couldn't read file!")
 
-    let res = working_string.regex_replace(capture, replacement_string).stats()
+    let res = working_string.regex::replace(capture, replacement_string).stats()
     println("Replaced {res.count} instances of {capture}")
 }
